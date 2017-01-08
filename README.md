@@ -10,50 +10,50 @@ There is just one script called run_analysis.r
 Steps:
 
 1. Setup
-..* First of all, working dir is set as the same dir of UCI Har Dataset (please customize to your own UCI Har directory)
-..* Load column names (features.txt) to features dataframe
+  * First of all, working dir is set as the same dir of UCI Har Dataset (please customize to your own UCI Har directory)
+  * Load column names (features.txt) to features dataframe
 
 2. Test Setup
-..* Load subjects of test to test_subjects dataframe
-..* Load test data (X_test.txt) to test dataframe
-..* Load test activities (y_test.txt) to test_activity dataframe
+  * Load subjects of test to test_subjects dataframe
+  * Load test data (X_test.txt) to test dataframe
+  * Load test activities (y_test.txt) to test_activity dataframe
 
 3. Test Dataset
-..* Set test dataframe column names from features
-..* Include a column (test$DataType) marking data as Test Data (Te)
-..* Include a column with subjects ids  (test$subject)
-..* Include a column with activity (test$act)
+  * Set test dataframe column names from features
+  * Include a column (test$DataType) marking data as Test Data (Te)
+  * Include a column with subjects ids  (test$subject)
+  * Include a column with activity (test$act)
 
 4. Train Setup
-..* Load train subjects (subject_train.txt) to train_subjects dataframe
-..* Load train data (X_train.txt) to train dataframe
-..* Load train activity (y_train.txt) to train_activity dataframe
+  * Load train subjects (subject_train.txt) to train_subjects dataframe
+  * Load train data (X_train.txt) to train dataframe
+  * Load train activity (y_train.txt) to train_activity dataframe
 
 5. Train Dataset
-..* Set train dataframe columns from features
-..* Include a column (train$DataType) marking data as Train Data (Tr)
-..* Include a column with subjects ids (train$subject)
-..* Include a column with activity (train$act)
+  * Set train dataframe columns from features
+  * Include a column (train$DataType) marking data as Train Data (Tr)
+  * Include a column with subjects ids (train$subject)
+  * Include a column with activity (train$act)
 
 6. Merge data
-..* Merge test and train data with rbind function creating mergedData dataframe
+  * Merge test and train data with rbind function creating mergedData dataframe
 
 7. Select only mean and standard deviation variables/columns
-..* Subset features dataframe using grepl and subset functions creating means_stds dataframe
-..* Using dataframe created on previous step (means_stds) subset mergedData creating meansStdData dataframe
+  * Subset features dataframe using grepl and subset functions creating means_stds dataframe
+  * Using dataframe created on previous step (means_stds) subset mergedData creating meansStdData dataframe
 
 8. Include descriptive activity variable
-..* Include a new column (meanStdData$activity) with descriptive activity variable
-..* Drop previous integer activity column 
+  * Include a new column (meanStdData$activity) with descriptive activity variable
+  * Drop previous integer activity column 
 
 9. Label variable names with more intuitive names
-..* Creates a newColumnNames array with new names
-..* Change labels using colnames function
+  * Creates a newColumnNames array with new names
+  * Change labels using colnames function
 
 10. Final Dataframe with averages
-..* Melt data usign melt function from reshape2 library
-..* Calculate means using dcast function
-..* Export to text file using write.table function
+  * Melt data usign melt function from reshape2 library
+  * Calculate means using dcast function
+  * Export to text file using write.table function
 
 
 ***

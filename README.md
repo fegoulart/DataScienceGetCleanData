@@ -319,7 +319,7 @@ meltedData <- melt(meanStdData, id=c("SubjectId","Activity"),measure.vars=c("Mea
 finalMeanData <- dcast(meltedData, SubjectId + Activity ~ variable, mean)
 
 #export/write dataframe
-write.table(finalMeanData,file='./fegoulart.txt')
+write.table(finalMeanData,file='./fegoulart.txt',row.name=FALSE)
 
 
 ````
